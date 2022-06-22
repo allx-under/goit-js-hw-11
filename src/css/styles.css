@@ -4,26 +4,156 @@
     box-sizing: border-box;
 }
 
+body {
+    margin: 0 auto;
+}
 
-.search-form {
+a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+::-webkit-scrollbar {
+    /* chrome based */
+    width: 0px;
+    /* ширина scrollbar'a */
+    background: transparent;
+    /* опционально */
+}
+
+html {
+    -ms-overflow-style: none;
+    /* IE 10+ */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+
+.form-container {
+    padding: 20px 0;   
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px 0;
-    background-color:azure;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(99, 105, 126, 1) 35%, rgba(99, 105, 126, 1) 100%);
+    margin-bottom: 20px;
+
+}
+
+.search-form {
+    width: 300px;
+    background: #2f3640;
+    height: 40px;
+    border-radius: 40px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+
+}
+
+.search-form:hover>input{
+    width: 240px;
+    padding: 0 6px;
+}
+
+.search-form:hover>.btn-search {
+    background: white;
+    color: #2f3640;
+}
+
+.btn-search {
+    cursor: pointer;
+    color: white;
+    float: right;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #585e66;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+}
+
+.search-form input {
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 0;
+    color: white;
+    font-size: 16px;
+    transition: 0.4s;
+    line-height: 40px;
+    width: 0px;
+
+}
+
+@media screen and (max-width: 620px) {
+    .search-form:hover>input {
+        width: 150px;
+        padding: 0 6px;
+    }
 }
 
 .gallery {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    
+    justify-content: space-around;
 }
 
 .photo-card {
     margin: 10px;
-    flex-basis: 25%;
-    border: 1px solid black;
+    /* box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2); */
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
+    rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    transition: all linear 200ms;
+}
+
+.photo-card:hover {
+    transform: scale(1.05);
+}
+
+
+
+.photo-img {
+    object-fit: cover;
+}
+
+.info {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.load-more {
+    display: flex;
+    margin: 20px auto;
+    background-color: #f1f1f1;
+    color: black;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    padding: 10px;
+    transition: all linear 300ms;
+}
+
+.load-more:hover {
+        background-color: #2f3640;
+        color: white;
+}
+
+.load-more.is-hidden {
+    visibility: hidden;
 }
 
