@@ -53,12 +53,12 @@ html {
 
 }
 
-.search-form:hover>input{
+.search-form:hover>input, .search-form:focus>input{
     width: 240px;
     padding: 0 6px;
 }
 
-.search-form:hover>.btn-search {
+.search-form:hover>.btn-search, .search-form:focus>.btn-search {
     background: white;
     color: #2f3640;
 }
@@ -91,12 +91,6 @@ html {
 
 }
 
-@media screen and (max-width: 620px) {
-    .search-form:hover>input {
-        width: 150px;
-        padding: 0 6px;
-    }
-}
 
 .gallery {
     display: flex;
